@@ -1,10 +1,9 @@
-local player = game.Players. LocalPlayer
-
-
-local banDuration = 1337 
-local reason = "Cheating | ID 1337"
-
-local message = string.format("You were kicked from this experience: \nYou are banned for [%99999999999 hours]\nReason: %s\nFuture bans will be PERMANENT. Do not break the rules.",
+local player = game.Players. LocalPlayer 
+)
+local banDuration = 999
+local reason = "ÓC CẶC | ID 1337"
+)
+local message = string.format("You were kicked from this experience: \nYou are banned for [%d Years]\nReason: %s\nCo Cái Lồn Tham Vừa thôi thằng đầu CặC.Muốn dùng đưa anh 120k.",
 banDuration,
 reason
 )
