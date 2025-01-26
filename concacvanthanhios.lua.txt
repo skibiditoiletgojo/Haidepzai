@@ -1,16 +1,16 @@
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VanThanhIOS/OniiChanVanThanhIOS/refs/heads/main/uimain.txt")))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanVanThanhIOS/refs/heads/main/uimain.txt"))()
 
        local Window = MakeWindow({
          Hub = {
-         Title = "Văn Thành IOS",
+         Title = "Teddy",
          Animation = "Script Tổng Hợp Ver1"
          },
         Key = {
         KeySystem = false,
-        Title = "Văn ThànHh IOS / Scrit Tổng Hợp",
+        Title = "Teddy / Scrit Tổng Hợp",
         Description = "",
         KeyLink = "",
-        Keys = {"VanThanhIOS"},
+        Keys = {"Teddy"},
         Notifi = {
         Notifications = true,
         CorrectKey = "Đang Chạy Kịch Bản",
@@ -21,7 +21,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VanThanhIOS/OniiChan
   })
 
        MinimizeButton({
-       Image = "http://www.roblox.com/asset/?id=89284864928775",
+       Image = "http://www.roblox.com/asset/?id=81446095648729",
        Size = {40, 40},
        Color = Color3.fromRGB(10, 10, 10),
        Corner = true,
@@ -33,10 +33,13 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VanThanhIOS/OniiChan
      local Tab1o = MakeTab({Name = "Chức Năng"})
     
     AddButton(Tab1o, {
-     Name = "Min Gaming",
+     Name = "Xeno",
     Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinAE"))()
+getgenv().Team = "Marines"
+getgenv().Hide_Menu = false
+getgenv().Auto_Execute = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua"))()
 
   end
   })
@@ -51,7 +54,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/r
   })
 
     AddButton(Tab1o, {
-     Name = "Azune",
+     Name = "W azure",
     Callback = function()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
