@@ -60,8 +60,6 @@ loadstring(game:HttpGet"https://raw.githubusercontent.com/UserDevEthical/Loadstr
 end
 })
 
-})
-
     AddButton(Tab1o, {
      Name = "Xeno Hub",
     Callback = function()
