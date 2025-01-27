@@ -6,7 +6,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
          Animation = "Script Tổng Hợp"
          },
         Key = {
-        KeySystem = false,
+        KeySystem = true,
         Title = "Teddy / Script Tổng Hợp",
         Description = "",
         KeyLink = "",
@@ -31,6 +31,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Script Farm"})
+      })
+------ Tab
+     local Tab2o = MakeTab({Name = "kaitun"})
     
     AddButton(Tab1o, {
      Name = "Cuttay Hub (Gạt cần)",
@@ -49,25 +52,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs
 
 end
 })
-})
-      
------- Tab
-     local Tab2o = MakeTab({Name = "Script Farm2"})
-    
-    AddButton(Tab2o, {
-     Name = "Cutchim Hub (Gạt cần)",
-    Callback = function()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/refs/heads/main/Cuttayhubreal.lua'))()
-
-  end
-  })
-   
     AddButton(Tab2o, {
-     Name = "bay-Lite",
+     Name = "Fly-Lite",
     Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Fly.lua"))()
 
 end
 })
+
+
+
+
