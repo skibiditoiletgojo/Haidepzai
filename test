@@ -6,7 +6,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
          Animation = "Script Tổng Hợp"
          },
         Key = {
-        KeySystem = true,
+        KeySystem = false,
         Title = "Teddy / Script Tổng Hợp",
         Description = "",
         KeyLink = "",
@@ -31,8 +31,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Script Farm"})
------- Tab
-     local Tab2o = MakeTab({Name = "kaitun"})
     
     AddButton(Tab1o, {
      Name = "Cuttay Hub (Gạt cần)",
@@ -43,24 +41,25 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/ref
   end
   })
 
-    AddButton(Tab1o, {
-     Name = "Fly-Lite",
+
+       MinimizeButton({
+       Image = "http://www.roblox.com/asset/?id=123809008408464",
+       Size = {40, 40},
+       Color = Color3.fromRGB(10, 10, 10),
+       Corner = true,
+       Stroke = false,
+       StrokeColor = Color3.fromRGB(255, 0, 0)
+      })
+      
+------ Tab
+     local Tab2o = MakeTab({Name = "Script Farm2"})
+
+AddButton(Tab2o, {
+     Name = "Alchemy Hub",
     Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Fly.lua"))()
+loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
 
 end
 })
-
-    AddButton(Tab2o, {
-     Name = "Fly-Lite",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Fly.lua"))()
-
-end
-})
-
-
-
 
