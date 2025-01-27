@@ -1,0 +1,76 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanVanThanhIOS/refs/heads/main/uimain.txt"))()
+
+       local Window = MakeWindow({
+         Hub = {
+         Title = "Teddy",
+         Animation = "Script Tổng Hợp"
+         },
+        Key = {
+        KeySystem = false,
+        Title = "Teddy / Script Tổng Hợp",
+        Description = "",
+        KeyLink = "",
+        Keys = {"Teddyseetink"},
+        Notifi = {
+        Notifications = true,
+        CorrectKey = "Đang Chạy Kịch Bản",
+       Incorrectkey = "",
+       CopyKeyLink = "Đã Sao Chép"
+      }
+    }
+  })
+
+       MinimizeButton({
+       Image = "http://www.roblox.com/asset/?id=123809008408464",
+       Size = {40, 40},
+       Color = Color3.fromRGB(10, 10, 10),
+       Corner = true,
+       Stroke = false,
+       StrokeColor = Color3.fromRGB(255, 0, 0)
+      })
+      
+------ Tab
+     local Tab1o = MakeTab({Name = "Script Farm"})
+    
+    AddButton(Tab1o, {
+     Name = "Cuttay Hub (Gạt cần)",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/refs/heads/main/Cuttayhubreal.lua'))()
+
+  end
+  })
+
+   
+    AddButton(Tab1o, {
+     Name = "Fly-Lite",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Fly.lua"))()
+
+end
+})
+
+})
+      
+------ Tab
+     local Tab2o = MakeTab({Name = "Script Farm2"})
+    
+    AddButton(Tab2o, {
+     Name = "Cutchim Hub (Gạt cần)",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/refs/heads/main/Cuttayhubreal.lua'))()
+
+  end
+  })
+
+   
+    AddButton(Tab2o, {
+     Name = "bay-Lite",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Fly.lua"))()
+
+end
+})
