@@ -41,7 +41,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/ref
   end
   })
 
-   
     AddButton(Tab1o, {
      Name = "Fly-Lite",
     Callback = function()
@@ -50,7 +49,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs
 
 end
 })
-
 })
       
 ------ Tab
@@ -64,7 +62,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/ref
 
   end
   })
-
    
     AddButton(Tab2o, {
      Name = "bay-Lite",
