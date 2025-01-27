@@ -31,10 +31,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Script Farm"})
-    
-    AddButton(Tab1o, {
-     Name = "Cuttay Hub (Gạt cần)",
-    Callback = function()
 
 AddButton(Tab1o, {
      Name = "HoHo Hub",
