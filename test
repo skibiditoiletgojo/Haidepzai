@@ -1,27 +1,27 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanVanThanhIOS/refs/heads/main/uimain.txt"))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V2/refs/heads/main/UiREDzV2.lua")))()
 
        local Window = MakeWindow({
          Hub = {
          Title = "Teddy",
-         Animation = "Script Tổng Hợp"
+         Animation = "Script tổng hợp"
          },
         Key = {
         KeySystem = false,
-        Title = "Teddy / Script Tổng Hợp",
+        Title = "Key System",
         Description = "",
         KeyLink = "",
-        Keys = {"Teddyseetink"},
+        Keys = {"Teddy"},
         Notifi = {
         Notifications = true,
-        CorrectKey = "Đang Chạy Kịch Bản",
-       Incorrectkey = "",
-       CopyKeyLink = "Đã Sao Chép"
+        CorrectKey = "Running the Script...",
+       Incorrectkey = "The key is incorrect",
+       CopyKeyLink = "Copied to Clipboard"
       }
     }
   })
 
        MinimizeButton({
-       Image = "http://www.roblox.com/asset/?id=123809008408464",
+       Image = "http://www.roblox.com/asset/?id=131490913337463",
        Size = {40, 40},
        Color = Color3.fromRGB(10, 10, 10),
        Corner = true,
@@ -31,36 +31,85 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanV
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Script Farm"})
+     local Tab2o = MakeTab({Name = "Script Kaitun"})
+     local Tab3o = MakeTab({Name = "Script Fix lag"})
+local Tab4o = MakeTab({Name = " Auto chest,Fruits"})
+     local Tab5o = MakeTab({Name = "Script Troll "})
+       local Tab6o = MakeTab({Name = "Mirage island"})
+-------TOGGLE 
 
-AddButton(Tab1o, {
-     Name = "HoHo Hub",
+     Toggle = AddToggle(Tab1o, {
+      Name = "Teddy Skibidi",
+      Default = false,
+      Callback = function()
+     end
+    })
+    
+------- BUTTON
+    
+    AddButton(Tab1o, {
+     Name = "W azure",
     Callback = function()
 
-_G.HohoVersion = "v4"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+	getgenv().Team = "Pirates"
+getgenv().FixCrash = false -- Turn it On For Hopping Server, Improve Performance But Silent Aim On Mob And Player
+getgenv().FixCrash2 = false -- Turn it On For Hopping Server, Improve Performance But Will Remove Speed Changer
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
 
-end
-})
+  end
+     })   
+AddButton(Tab1o, {
+     Name = "Redz Hub",
+    Callback = function()
+
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))(Settings)
+
+  end
+  })  
+
+AddButton(Tab1o, {
+     Name = "Cokka Hub",
+    Callback = function()
+
+loadstring(game:HttpGet"https://raw.githubusercontent.com/UserDevEthical/Loadstring/main/CokkaHub.lua")()
+
+  end
+  })   
 
 AddButton(Tab1o, {
      Name = "Alchemy Hub",
     Callback = function()
 
-loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+	loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
 
-end
-})
+  end
+  })   
 
 AddButton(Tab1o, {
-     Name = "CoKka Hub",
+     Name = "HoHo Hub",
     Callback = function()
 
-loadstring(game:HttpGet"https://raw.githubusercontent.com/UserDevEthical/Loadstring/main/CokkaHub.lua")()
+	  _G.HohoVersion = "v4"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
 
-end
-})
+  end
+  })
 
-    AddButton(Tab1o, {
+   AddButton(Tab1o, {
+     Name = "Master Hub",
+    Callback = function()
+
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/obfmoonsec/Masterhub/refs/heads/main/obf"))()
+
+  end
+  })  
+
+AddButton(Tab1o, {
      Name = "Xeno Hub",
     Callback = function()
 
@@ -70,101 +119,124 @@ getgenv().Auto_Execute = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua"))()
 
 end
-})
-
-    AddButton(Tab1o, {
-     Name = "W azure",
-    Callback = function()
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
-
-  end
-  })
-
-    AddButton(Tab1o, {
-     Name = " Min Gaming AV Vietsub",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinAV"))()
-            
-  end
-  })
+})  
 
 AddButton(Tab1o, {
-     Name = " Volcano Hub",
+     Name = "Volcano Hub",
     Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/wpisstestfprg/Volcano/refs/heads/main/VolcanoLocal.lua", true))()
 
 end
-})
-
-AddButton(Tab1o, {
-     Name = " Quamtum Onyx Hub",
+})  
+AddButton(Tab2o, {
+     Name = "Simple Hub Kaitun",
     Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Trustmenotcondom/QTONYX/refs/heads/main/QuantumOnyx.lua"))()
+getgenv().simple_settings = {
 
-end
-})
+    ["MASTERY"] = { -- Settings related to leveling up weapon or skill mastery
 
-AddButton(Tab1o, {
-     Name = " Master Hub",
-    Callback = function()
+        ["ACTIVE"] = true, -- Enable or disable mastery leveling (true = enabled, false = disabled)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/obfmoonsec/Masterhub/refs/heads/main/obf"))()
+        ["METHOD"] = "Half", -- Method for gaining mastery, "Half"[300] or "Full"[600]
 
-end
-})
+    },
 
-AddButton(Tab1o, {
-     Name = " Redz Hub",
-    Callback = function()
+ 
 
-local Settings = {
-  JoinTeam = "Pirates"; -- Pirates/Marines
-  Translator = true; -- true/false
+    ["OBJECTIVE"] = { -- Goals for farming and unlocking features
+
+        ["GODHUMAN"] = true, -- Automatically unlock the "Godhuman" fighting style
+
+        ["RACE-V3"] = true, -- Automatically upgrade character race to V3 if possible Human, Mink, (Fishman, Ghoul, Cyborg) soon
+
+        ["FRAGMENT"] = 100000, -- Limit number of fragments to collect
+
+ 
+
+        -- SWORD
+
+        ["CANVANDER"] = true,
+
+        ["BUDDY-SWORD"] = true,
+
+        ["CURSED-DUAL-KATANA"] = true,
+
+        ["SHARK-ANCHOR"] = true, -- soon..
+
+ 
+
+        --GUN
+
+        ["ACIDUM-RIFLE"] = true,
+
+        ["VENOM-BOW"] = true,
+
+        ["SOUL-GUITAR"] = true,
+
+    },
+
+ 
+
+    ["FRUITPURCHASE"] = true, -- Automatically purchase fruits based on priority list
+
+    ["PRIORITYFRUIT"] = { -- List of preferred fruits to purchase or eat in order of priority
+
+        [1] = "Dragon-Dragon",
+
+        [2] = "Flame-Flame",
+
+        [3] = "Rumble-Rumble",
+
+        [4] = "Human-Human: Buddha",
+
+        [5] = "Dark-Dark",
+
+    },
+
+ 
+
+    ["FPSCAP"] = 30, -- Limit the frame rate to optimize performance
+
+    ["LOWTEXTURE"] = true -- Reduce graphic quality for better performance
+
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))(Settings)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua"))()
 
 end
-})
-
-AddButton(Tab1o, {
-     Name = " OMG Hub",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()
-
-  end
-  })
-
-       MinimizeButton({
-       Image = "http://www.roblox.com/asset/?id=123809008408464",
-       Size = {40, 40},
-       Color = Color3.fromRGB(10, 10, 10),
-       Corner = true,
-       Stroke = false,
-       StrokeColor = Color3.fromRGB(255, 0, 0)
-      })
-      
------- Tab
-     local Tab2o = MakeTab({Name = "Script Fix lag and troll"})
+})  
 
 AddButton(Tab2o, {
-     Name = "Shader",
+     Name = "Xero Hub Kaitun",
     Callback = function()
-
-loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
-            
+getgenv().Configs = {
+    ["Team"] = "Pirates",
+    ["Gun Farm"] = false, -- Fast farm level, BUT FARMING MELEE SLOW
+    ["FPS Boost"] = {
+        ["Enable"] = true,
+        ["FPS Cap"] = 30, --FPS u want 
+    },
+    ["Farm Boss Drops"] = {
+        ["Enable"] = true,
+        ["When x2 Exp Expired"] = true
+    },
+    ["Hop Player Near"] = false,
+    ["Soul Guitar"] = true, -- Farm SG Last
+    ["Find Fruit"] = true, -- Will find 1m+ fruit to unlock swan door to access third sea
+    ["Cursed Dual Katana"] = true --Farm CDK First
+}
+repeat task.wait(5) pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/verudous/Xero-Hub/refs/heads/main/kaitun.lua"))()end) until getgenv().Check_Execute
 end
-})
-
-AddButton(Tab2o, {
+})    AddButton(Tab2o, {
+     Name = "Royx Hub Kaitun",
+    Callback = function()
+loadstring(game:HttpGet("https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua"))()
+end
+})  AddButton(Tab3o, {
      Name = "Fix lag",
     Callback = function()
-
 repeat
     wait()
 until game:IsLoaded()
@@ -230,10 +302,81 @@ local function FPSBooster()
     end
 end
 
-FPSBooster()
+FPSBooster()     
+  end
+  }) AddButton(Tab3o, {
+     Name = "Shader",
+    Callback = function()
+loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
+   end
+})  AddButton(Tab4o, {
+     Name = "Lion Find Fruit",
+    Callback = function()
+_G.Select_Marines = true
+TweenFruit = true
+StoreFruit = true
+RandomFruit = true
+_G.AutoESPFruit = true
+BypassTP = true
+Rejoin_Boost = true
+Set_Level_For_Farm = 1
+_G.FarmLevel = true
+Set_Beli_For_Kata = 1
+_G.FarmKata = true
+Set_Bones_For_Bones = 1
+_G.AuBones = true
+_G.MysticIsland = true
+_G.AttackRip_indraiffind = true
+_G.Katav2 = true
+_G.BuyZoroSw = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NHMdz/BloxFruit/main/Lion%20Hub%20Find%20Fruit.lua"))()
+end
+})  AddButton(Tab4o, {
+     Name = "Zenith Find Fruit",
+    Callback = function()
+ServerHopTimer = 5
+TeleportSafe = true
+Webhook = "Your Webhook Here"
+_G.Version="Fruit Farm"loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()
+end
+ })  AddButton(Tab4o, {
+     Name = " Thunz Hub Auto chest",
+    Callback = function()
+_G.Team = "Marine" -- "Marine" or "Pirate"
+_G.MetodeTeleport = "Instant" --"Instant" or "Tween"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThundarZ/Welcome/refs/heads/main/Main/BloxFruit/Chest/AllDevices.lua"))()
+end
+}) AddButton(Tab5o, {
+     Name = " Fake Band",
+    Callback = function()
+
+   local player = game.Players. LocalPlayer
+
+
+local banDuration = 99999 
+local reason = "Cheating | ID 1337"
+
+local message = string.format("You were kicked from this experience: \nYou are banned for [%d Year]\nReason: %s\Mày đã bị band bởi Teddy đẹp zai số 1 thế giới.",
+banDuration,
+reason
+)
+player: Kick(message)
 
   end
-  })
+  })   
+AddButton(Tab5o, {
+     Name = "Auto reset all fruit and fragment ( warning ) ",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/refs/heads/main/Kaitun.txt"))()
+
+end
+})
+  AddButton(Tab6o, {
+     Name = "Cuttay Hub (Auto gạt cần) ",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/diemquy/CutTayHub/refs/heads/main/Cuttayhubreal.lua'))()
 
 end
 })
