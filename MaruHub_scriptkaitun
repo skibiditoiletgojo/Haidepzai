@@ -1,10 +1,147 @@
-local player = game.Players. LocalPlayer
-)
-local banDuration = 1337 
-local reason = "Cheating | ID 1337"
-)
-local message = string.format("You were kicked from this experience: \nYou are banned for [%99999999999 hours]\nReason: %s\nFuture bans will be PERMANENT. Do not break the rules.",
-banDuration,
-reason
-)
-player: Kick(message)
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local LoadingScreen = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local BarBackground = Instance.new("Frame")
+local Bar = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local GameTitle = Instance.new("TextLabel")
+local AssetsLoaded = Instance.new("TextLabel")
+local DisplayPercentage = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+LoadingScreen.Name = "LoadingScreen"
+LoadingScreen.Parent = ScreenGui
+LoadingScreen.Enabled = false
+LoadingScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LoadingScreen.ResetOnSpawn = false
+
+Background.Name = "Background"
+Background.Parent = LoadingScreen
+Background.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Background.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Background.Size = UDim2.new(1, 0, 1, 0)
+
+BarBackground.Name = "BarBackground"
+BarBackground.Parent = Background
+BarBackground.AnchorPoint = Vector2.new(0.5, 0.5)
+BarBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BarBackground.BackgroundTransparency = 0.600
+BarBackground.BorderColor3 = Color3.fromRGB(27, 42, 53)
+BarBackground.Position = UDim2.new(0.5, 0, 0.600000024, 0)
+BarBackground.Size = UDim2.new(0.349999994, 0, 0.0799999982, 0)
+
+Bar.Name = "Bar"
+Bar.Parent = BarBackground
+Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bar.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Bar.Size = UDim2.new(0.100000001, 0, 1, 0)
+
+UICorner.CornerRadius = UDim.new(0.200000003, 0)
+UICorner.Parent = Bar
+
+UICorner_2.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_2.Parent = BarBackground
+
+GameTitle.Name = "Teddy "
+GameTitle.Parent = Background
+GameTitle.AnchorPoint = Vector2.new(0.5, 0.5)
+GameTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameTitle.BackgroundTransparency = 1.000
+GameTitle.BorderColor3 = Color3.fromRGB(27, 42, 53)
+GameTitle.BorderSizePixel = 0
+GameTitle.Position = UDim2.new(0.5, 0, 0.300000012, 0)
+GameTitle.Size = UDim2.new(0.503120005, 0, 0.263607591, 0)
+GameTitle.Font = Enum.Font.GothamBold
+GameTitle.Text = "Teddy🚽"
+GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+GameTitle.TextScaled = true
+GameTitle.TextSize = 14.000
+GameTitle.TextWrapped = true
+
+AssetsLoaded.Name = "TeddyLoaded"
+AssetsLoaded.Parent = Background
+AssetsLoaded.AnchorPoint = Vector2.new(0.5, 0.5)
+AssetsLoaded.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AssetsLoaded.BackgroundTransparency = 1.000
+AssetsLoaded.BorderColor3 = Color3.fromRGB(27, 42, 53)
+AssetsLoaded.BorderSizePixel = 0
+AssetsLoaded.Position = UDim2.new(0.5, 0, 0.518000007, 0)
+AssetsLoaded.Size = UDim2.new(0.418668032, 0, 0.0360759608, 0)
+AssetsLoaded.Font = Enum.Font.Gotham
+AssetsLoaded.Text = ""
+AssetsLoaded.TextColor3 = Color3.fromRGB(255, 255, 255)
+AssetsLoaded.TextScaled = true
+AssetsLoaded.TextSize = 14.000
+AssetsLoaded.TextWrapped = true
+
+DisplayPercentage.Name = "DisplayPercentage"
+DisplayPercentage.Parent = Background
+DisplayPercentage.AnchorPoint = Vector2.new(0.5, 0.5)
+DisplayPercentage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DisplayPercentage.BackgroundTransparency = 1.000
+DisplayPercentage.BorderColor3 = Color3.fromRGB(27, 42, 53)
+DisplayPercentage.BorderSizePixel = 0
+DisplayPercentage.Position = UDim2.new(0.5, 0, 0.680000007, 0)
+DisplayPercentage.Size = UDim2.new(0.418668032, 0, 0.054653082, 0)
+DisplayPercentage.Font = Enum.Font.GothamBold
+DisplayPercentage.Text = ""
+DisplayPercentage.TextColor3 = Color3.fromRGB(255, 255, 255)
+DisplayPercentage.TextScaled = true
+DisplayPercentage.TextSize = 14.000
+DisplayPercentage.TextTransparency = 0.500
+DisplayPercentage.TextWrapped = true
+
+-- Scripts:
+
+local function UWMMKF_fake_script() -- LoadingScreen.LocalScript 
+	local script = Instance.new('LocalScript', LoadingScreen)
+
+	--[[ Made by coolcapidog
+	Channel ->> https://www.youtube.com/c/coolcapidog
+	You shouldn't change anything if you don't know scripting.
+	]]
+	
+	local ReplicatedFirst = game:GetService("ReplicatedFirst")
+	local ContentProvider = game:GetService("ContentProvider")
+	local TweenService = game:GetService("TweenService")
+	local Background = script.Parent:WaitForChild("Background")
+	
+	ReplicatedFirst:RemoveDefaultLoadingScreen()
+	local assets = game.Workspace:GetDescendants()
+	script.Parent.Enabled = true
+	
+	for i = 1, #assets do
+		local asset = assets[i]
+		local percentage = math.round(i / #assets * 100)
+		ContentProvider:PreloadAsync({asset})
+		Background:WaitForChild("DisplayPercentage").Text = percentage.."%"
+		Background:WaitForChild("AssetsLoaded").Text = "Loading Assets: "..i.."/"..#assets
+		TweenService:Create(Background.BarBackground.Bar, TweenInfo.new(0.2,Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Size = UDim2.fromScale(percentage/100, 1)}):Play()
+		if i % 50 == 0 then
+			task.wait()
+		end
+	end
+	Background:WaitForChild("AssetsLoaded").Text = "Game loaded!"
+	wait(3)
+	for i, v in pairs(script.Parent:GetDescendants()) do
+		if v:IsA("Frame") then
+			TweenService:Create(v, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
+		elseif v:IsA("TextLabel") then
+			TweenService:Create(v, TweenInfo.new(0.5), {TextTransparency = 1}):Play()
+		end
+	end
+	wait(1)
+	script.Parent.Enabled = false
+end
+coroutine.wrap(UWMMKF_fake_script)()
+wait(4)
