@@ -24,5 +24,3 @@ game.StarterGui:SetCore(
         Title = "Fix Lag By Thành 2K8",
         Text = "Đã xoá 100% đồ hoạ",
         Duration = 10
-    })
-    end
