@@ -1,0 +1,36 @@
+
+require(game.ReplicatedStorage:WaitForChild("Notification")).new(
+            " <Color=Red>Teddy On Top 👑<Color=/> "
+        ):Display()
+wait(2)
+require(game.ReplicatedStorage:WaitForChild("Notification")).new(
+            " <Color=Green>Đã xoá 100% đồ hoạ <Color=/> "
+        ):Display()
+wait(2)
+for i,v in next, workspace:GetDescendants() do
+    pcall(function()
+        v.Transparency = 1
+    end)
+end
+for i,v in next, getnilinstances() do
+    pcall(function()
+        v.Transparency = 1
+        for i1,v1 in next, v:GetDescendants() do
+            v1.Transparency = 1
+        end
+    end)
+end
+a = workspace
+a.DescendantAdded:Connect(function(v)
+    pcall(function()
+        v.Transparency = 1
+    end)
+end)
+
+game.StarterGui:SetCore(
+    "SendNotification",
+    {
+        Title = "Fix Lag By Teddy",
+        Text = "Loading......",
+        Duration = 3
+    })
