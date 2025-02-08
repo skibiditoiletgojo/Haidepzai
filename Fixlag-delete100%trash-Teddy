@@ -1,0 +1,36 @@
+
+local ScreenGui = Instance.new("ScreenGui")
+
+local TextLabel = Instance.new("TextLabel")
+
+local UIGradient = Instance.new("UIGradient")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel.BackgroundTransparency = 1.000
+
+TextLabel.BorderColor3 = Color3.fromRGB(100, 100, 500)
+
+TextLabel.BorderSizePixel = 0
+
+TextLabel.Position = UDim2.new(0.359138072, 0, -0.025062656, 0)
+
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+
+TextLabel.Font = Enum.Font.FredokaOne
+
+TextLabel.Text = "https://discord.gg/FcA3hBmP"
+
+TextLabel.TextColor3 = Color3.fromRGB(131.00000739097595, 181.0000044107437, 255)
+
+TextLabel.TextSize = 22.000
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/Nofrog"))()
+wait(6)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/v3"))()
