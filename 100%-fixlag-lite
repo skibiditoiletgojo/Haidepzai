@@ -21,7 +21,7 @@ end)
 game.StarterGui:SetCore(
     "SendNotification",
     {
-        Title = "Fix Lag By Teddy",
-        Text = "Loading......",
+        Title = "Đã bật Fix Lag ",
+        Text = "Đã xoá 100% đồ hoạ",
         Duration = 3
     })
