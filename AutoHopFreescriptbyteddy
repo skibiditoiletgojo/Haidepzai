@@ -37,8 +37,8 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 -------TOGGLE 
 
      Toggle = AddToggle(Tab1o, {
-      Name = "make by: An béo",
-      Default = false,
+      Name = "YTB: Teddy Hub",
+      Default = true,
       Callback = function()
      end
     })
@@ -52,7 +52,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepT
 end
 })
    AddButton(Tab1o, {
-     Name = "Auto Hop Dough King (wait update)",
+     Name = "Auto Hop Dough King ",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnBeoDepTrai/refs/heads/main/Dough_King"))()
 end
