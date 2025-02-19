@@ -31,7 +31,6 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Trang chủ"})
-     local Tab2o = MakeTab({Name = "Script"})
      
      
 -------TOGGLE 
@@ -68,16 +67,6 @@ AddButton(Tab1o, {
 end
 })
 AddButton(Tab1o, {
-     Name = "Auto Hop Black beard boss (Wait Update)",
-    Callback = function()
-end
-})
-AddButton(Tab1o, {
-     Name = "Auto Hop Black beard boss (Wait Update)",
-    Callback = function()
-end
-})
-AddButton(Tab1o, {
      Name = "Auto Hop legendery sword (Wait Update)",
     Callback = function()
 end
@@ -87,9 +76,9 @@ AddButton(Tab1o, {
     Callback = function()
 end
 })
-AddButton(Tab2o, {
-     Name = "Teddy Hub v2",
+AddButton(Tab1o, {
+     Name = "Auto Hop Haki Legendery (Wait Update)",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/TeddyHubv2"))()
 end
 })
+
