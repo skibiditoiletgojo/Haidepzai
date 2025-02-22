@@ -9,8 +9,8 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
         KeySystem = true,
         Title = "Get Key",
         Description = "Teddy Hub Auto Hop (FREE)",
-        KeyLink = "https://direct-link.net/1296064/teddyhucontop",
-        Keys = {"Teddykobell"},
+        KeyLink = "https://link4sub.com/k1c8",
+        Keys = {"teddyontop"},
         Notifi = {
         Notifications = true,
         CorrectKey = "Đang chạy script...",
