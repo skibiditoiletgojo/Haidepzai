@@ -1,0 +1,253 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
+ImageButton.Size = UDim2.new(0, 40, 0, 40)
+ImageButton.Draggable = true
+ImageButton.Image = "http://www.roblox.com/asset/?id=127148935802371"
+
+UICorner.CornerRadius = UDim.new(1, 10) 
+UICorner.Parent = ImageButton
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+repeat wait() until game:IsLoaded()
+local Window = Fluent:CreateWindow({
+    Title = "Teddy Hub-Auto Hop",
+    SubTitle = "| by Vhaidz (Free)",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(500, 320),
+    Acrylic = true,
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End
+})
+local Tabs = {
+Servers=Window:AddTab({ Title="Discord" }),
+ Info=Window:AddTab({ Title="Thông Tin" }),
+  Status=Window:AddTab({ Title="Chạy Id Game" }),
+  Main=Window:AddTab({ Title="Tự Động Hop" }),
+}
+local Discord = Tabs.Servers:AddSection("Discord")
+Tabs.Servers:AddButton({
+        Title="TBoy Roblox Cominity",
+        Description="Discord",
+        Callback=function()
+            setclipboard(tostring("https://discord.gg/kTdxbwwKec")) 
+        end
+})
+Tabs.Servers:AddButton({
+    Title="Teddy",
+    Description="Youtube",
+    Callback=function()
+        setclipboard(tostring("https://youtube.com/@teddybelll?si=-iWdFHKED7btPD5C"))
+    end
+})
+local Credits = Tabs.Servers:AddSection("Credits")
+Tabs.Servers:AddParagraph({
+    Title="Teddy On Top",
+    Description="",
+    Callback=function()
+    end
+})
+Tabs.Info:AddParagraph({
+    Title="Phát Triển Teddy X Dex",
+    Content="On Top"
+})
+local executorName
+if identifyexecutor then
+    executorName=identifyexecutor()
+elseif getexecutorname then
+    executorName=getexecutorname()
+end
+if executorName then
+    Tabs.Info:AddParagraph({
+        Title="Client Đang Dùng",
+        Content=executorName
+    })
+end
+Tabs.Info:AddParagraph({
+    Title="Cập Nhật",
+    Content="Script Tổng Hợp Giữa Pe Và Pc nên Sẽ Có 1 Số Script Không Chạy Được"
+})
+Tabs.Info:AddParagraph({
+    Title="Các Client Android Hỗ Trợ",
+    Content="Tất Cả Client Android"
+})
+Tabs.Info:AddParagraph({
+    Title="Các Client Pc Hỗ Trợ",
+    Content="Tất Cả Client Pc"
+})
+local Time = Tabs.Status:AddParagraph({
+    Title="Thời Gian",
+    Content=""
+})
+local function UpdateLocalTime()
+    local date = os.date("*t")
+    local hour = date.hour % 24
+    local ampm = hour<12 and "AM" or "PM"
+    local formattedTime = string.format("%02i:%02i:%02i %s", ((hour-1) % 12)+1, date.min, date.sec, ampm)
+    local formattedDate = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+    local LocalizationService = game:GetService("LocalizationService")
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+    local name = player.Name
+    local regionCode = "Unknown"
+    local success, code=pcall(function()
+        return LocalizationService:GetCountryRegionForPlayerAsync(player)
+    end)
+    if success then
+        regionCode=code
+    end
+    Time:SetDesc(formattedDate .. "-" .. formattedTime .. " [ " .. regionCode .. " ]")
+end
+spawn(function()
+    while true do
+        UpdateLocalTime()
+        game:GetService("RunService").RenderStepped:Wait()
+    end
+end)
+local ServerTime = Tabs.Status:AddParagraph({
+    Title="Thời Gian Máy Chủ",
+    Content=""
+})
+local function UpdateServerTime()
+    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+    local Hour = math.floor(GameTime/(60^2)) % 24
+    local Minute = math.floor(GameTime/60) % 60
+    local Second = GameTime % 60
+    ServerTime:SetDesc(string.format("%02d Tiếng-%02d Phút-%02d Giây", Hour, Minute, Second))
+end
+spawn(function()
+    while task.wait() do
+        pcall(UpdateServerTime)
+    end
+end)
+local Input = Tabs.Status:AddInput("Input", {
+        Title="Job ID",
+        Default="",
+        Placeholder="Dán Job ID Vào Đây",
+        Numeric=false, 
+        Finished=false, 
+        Callback=function(Value)
+            _G.Job=Value
+        end
+    })
+    Tabs.Status:AddButton({
+        Title="Bắt Đầu Tham Gia Job ID",
+        Description="Chỉ Support Cho Game Có Id Server Game",
+        Callback=function()
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId,_G.Job, game.Players.LocalPlayer)
+        end
+    })
+    Tabs.Status:AddButton({
+        Title="Sao Chép Job ID",
+        Description="Lấy Id Server Game",
+        Callback=function()
+            setclipboard(tostring(game.JobId))
+        end
+    })
+    local Toggle = Tabs.Status:AddToggle("MyToggle", {Title="Spam Tham Gia Job ID", Default=false })
+    Toggle:OnChanged(function(Value)
+  _G.Join=Value
+        end)
+        spawn(function()
+while wait() do
+if _G.Join then
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId,_G.Job, game.Players.LocalPlayer)
+end
+end
+end)
+Tabs.Status:AddButton({
+    Title="Tham Gia Máy Chủ Lại",
+    Description="",
+    Callback=function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+    end
+})
+Tabs.Status:AddButton({
+    Title="Đổi Máy Chủ",
+    Description="",
+    Callback=function()
+        Hop()
+    end
+})
+function Hop()
+    local PlaceID = game.PlaceId
+    local AllIDs = {}
+    local foundAnything = ""
+    local actualHour = os.date("!*t").hour
+    local Deleted = false
+    function TPReturner()
+        local Site;
+        if foundAnything=="" then
+            Site=game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+        else
+            Site=game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+        end
+        local ID = ""
+        if Site.nextPageCursor and Site.nextPageCursor ~="null" and Site.nextPageCursor ~=nil then
+            foundAnything=Site.nextPageCursor
+        end
+        local num = 0;
+        for i,v in pairs(Site.data) do
+            local Possible = true
+            ID=tostring(v.id)
+            if tonumber(v.maxPlayers)>tonumber(v.playing) then
+                for _,Existing in pairs(AllIDs) do
+                    if num ~=0 then
+                        if ID==tostring(Existing) then
+                            Possible=false
+                        end
+                    else
+                        if tonumber(actualHour) ~=tonumber(Existing) then
+                            local delFile = pcall(function()
+                                AllIDs={}
+                                table.insert(AllIDs, actualHour)
+                            end)
+                        end
+                    end
+                    num=num+1
+                end
+                if Possible==true then
+                    table.insert(AllIDs, ID)
+                    wait()
+                    pcall(function()
+                        wait()
+                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    end)
+                    wait()
+                end
+            end
+        end
+    end
+    function Teleport() 
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~="" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+    Teleport()
+end
+
+local AutoHop = Tabs.Main:AddSection("Sea 3")
+Tabs.Main:AddButton({
+    Title="Hop Mirage Island",
+    Description="Đợi 3s bấm 1 lần",
+    Callback=function()
+wait(3.0)  loadstring(game:HttpGet("https://raw.githubusercontent.com/ZusQ/kaman/refs/heads/main/testdk"))()
+    end
+})
